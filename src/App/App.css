@@ -1,0 +1,20 @@
+body{
+  background-color: rgb(227, 233, 255);
+  box-sizing: border-box;
+  margin: 0;
+}
+.form-container {
+  margin: 50px auto;
+  width: 400px;
+}
+.form {
+   border-radius: 8px;
+  background-color: #fff;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  align-items: center;
+
+}

@@ -1,0 +1,25 @@
+.items {
+    display: flex;
+    align-items: center;
+    color: rgb(136, 140, 152);
+    justify-content: space-between;
+    padding-right: 38px;
+  }
+  .todo-item-complete{
+    text-decoration: line-through;
+  }
+  .icon {
+    cursor: pointer;
+  }
+  
+  .icon_check:hover {
+    color: green;
+  
+  }
+  .icon_check_active {
+    color: green;
+  }
+  
+  .delete_item:hover{
+    color: red;
+  }

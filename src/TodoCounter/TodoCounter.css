@@ -1,0 +1,9 @@
+.header {
+    border-radius: 12px;
+    background-color: rgb(171, 128, 234);
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+    padding: 24px;
+    color: #fff;
+  }
