@@ -4,21 +4,30 @@ import { AppUI } from "./AppUI.js";
 import "./App.css";
 
 /*
+localStorage.removeItem("TODOS_V1");
+
 const defaultTodos = [
   { text: "Hacer la tarea de Ingles", completed: false },
   { text: "Pasear al perro", completed: false },
   { text: "Visitar a la novia", completed: false },
-  { text: "Hacer la tarea de Matematicas", completed: false},
-  { text: "Hacer la tarea de Fisica", completed: false},
+  { text: "Hacer la tarea de Matemáticas", completed: false},
+  { text: "Hacer la tarea de Física", completed: false},
 ]; 
 
 localStorage.setItem("TODOS_V1", JSON.stringify(defaultTodos));
+
 */
 
 function App(
 ) {
   
-  const [todos, saveTodos] = useLocalStorage("TODOS_V1", []);
+  const {
+    item: todos,
+    saveItem: saveTodos,
+    loading,
+    error,
+
+  } = useLocalStorage("TODOS_V1", []);
   const [searchValue, setSearchValue] = React.useState("");
 
   const completedTodos = todos.filter(todo => !!todo.completed).length;
@@ -48,6 +57,8 @@ function App(
 
   return (
     <AppUI
+      loading={loading}
+      error= {error}
       totalTodos={totalTodos}
       completedTodos={completedTodos}
       searchValue={searchValue}

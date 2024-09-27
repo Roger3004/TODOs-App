@@ -3,18 +3,21 @@ import { TodoSearch } from "../TodoSearch/index.js";
 import { TodoAggButton } from "../TodoAggButton/index.js.js";
 import { TodoList } from "../TodoList/index.js";
 import { TodoItem } from "../TodoItem/index.js";
+import { TodosLoading } from "../TodosLoading/index.js";
+import { TodosError } from "../TodosError/index.js";
+import { EmptyTodos } from "../EmptyTodos/index.js";
 
-function AppUI(
-    {
-        totalTodos,
-        completedTodos,
-        searchValue,
-        setSearchValue,
-        filteredTodos,
-        completeTodo,
-        deleteTodo,
-    }
-) {
+function AppUI({
+  totalTodos,
+  completedTodos,
+  searchValue,
+  setSearchValue,
+  filteredTodos,
+  completeTodo,
+  deleteTodo,
+  loading,
+  error,
+}) {
   return (
     <>
       <div className="form-container">
@@ -25,6 +28,10 @@ function AppUI(
             setSearchValue={setSearchValue}
           />
           <TodoList>
+            {loading && <TodosLoading/>} 
+            {error && <TodosError/>}
+            {!loading && filteredTodos.length === 0 && <EmptyTodos/>}
+
             {filteredTodos.map((todo) => (
               <TodoItem
                 key={todo.text}
@@ -41,5 +48,4 @@ function AppUI(
     </>
   );
 }
-
 export { AppUI };

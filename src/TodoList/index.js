@@ -2,7 +2,7 @@ import "./TodoList.css"
 
 function TodoList(props) {
   return(
-    <ul className="list">
+    <ul className="list px-6" >
         {props.children}
     </ul>
   ) 

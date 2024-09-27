@@ -5,7 +5,7 @@ import { FaCheck } from "react-icons/fa";
 
 function TodoItem({text, completed, onComplete, onDelete}) {
   return (
-    <li className="items">
+    <li className="items pt-4">
       <span 
         className={`icon icon_check ${completed ? "icon_check_active": ""}`}
         onClick={onComplete}
